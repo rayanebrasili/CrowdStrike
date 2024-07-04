@@ -1,0 +1,24 @@
+Sistema Operacional: Ubuntu 18.04
+Cloud: Azure
+
+* Primeiro é preciso ter o instalador do CrowdStrike Falcon Sensor (o agente), que é fornecido pela sua organização ou pode ser baixado no site do CrowdStrike.
+
+Em seguida, como eu tinha o arquivo do agente apenas na minha máquina local, utilizei o FileZilla pra passar o arquivo via SFTP (que é um protocolo de transferência de arquivos) pra 
+VM linux do Azure que eu estava acessando via SSH.
+
+Com isso, utilizei os seguintes comandos:
+
+#instalação
+sudo dpkg -i <instalador>.deb
+
+#Ativar o customer id
+sudo /opt/CrowdStrike/falconctl -s --cid(customer id)
+
+#Verificar estado do sensor
+sudo /opt/CrowdStrike/falconctl -g --cid
+
+#startar sensor
+systemctl start falcon-sensor
+
+#Verificar status do sensor
+systemctl status falcon-sensor
