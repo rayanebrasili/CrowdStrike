@@ -6,7 +6,7 @@ Cloud: Azure
 Em seguida, como eu tinha o arquivo do agente apenas na minha máquina local, utilizei o FileZilla pra passar o arquivo via SFTP (que é um protocolo de transferência de arquivos) pra 
 VM linux do Azure que eu estava acessando via SSH.
 
-Com isso, utilizei os seguintes comandos:
+Depois de transferir o arquivo pra vm Azure, utilizei os seguintes comandos:
 
 #instalação
 sudo dpkg -i <instalador>.deb
